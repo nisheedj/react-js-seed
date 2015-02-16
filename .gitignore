@@ -36,6 +36,9 @@ app/js/build
 #css 
 app/css
 
+#fonts
+app/fonts
+
 #bootstrap less files
 app/less/bootstrap
 

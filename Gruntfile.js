@@ -83,6 +83,16 @@ module.exports = function(grunt) {
           'app/js/build/build.js': 'app/js/src/**/*.js'
         }
       }
+    },
+    watch: {
+      seed: {
+        options: {
+          spawn: false,
+          livereload: true
+        },
+        files: ['./app/js/src/**/*.js'],
+        tasks: ['build']
+      }
     }
   });
 
@@ -95,9 +105,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-browserify');
 
   grunt.registerTask('default', 'Show Default Message', function() {
-    grunt.log.subhead('Please use `grunt first` to create the initial folder structure');
-    grunt.log.subhead('Please use `grunt build` to create and reload the app');
-    grunt.log.subhead('Please use `grunt serve` to serve the files @ localhost:9000');
+    grunt.log.ok(['Please use `grunt first` to create the initial folder structure']);
+    grunt.log.ok(['Please use `grunt build` to create and reload the app']);
+    grunt.log.ok(['Please use `grunt serve` to serve the files @ localhost:9000']);
+    grunt.log.ok(['Please use `grunt live` to watch file changes']);
   });
 
   grunt.registerTask('first', 'Create folders and copy files', function() {
@@ -107,12 +118,18 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build', 'Create build files', function() {
     grunt.log.ok(['Compiling *.jsx files and creating build files']);
-    grunt.task.run(['browserify:seed']);
+    grunt.task.run(['browserify:seed', 'watch:seed']);
   });
 
   grunt.registerTask('serve', 'Serve the files @ localhost:9000', function() {
     grunt.log.ok(['Serving files @ localhost:9000']);
     grunt.log.ok(['Use Ctrl + c to stop the server']);
     grunt.task.run(['connect:seed::keepalive']);
+  });
+
+  grunt.registerTask('live', 'Watch with live reload', function() {
+    grunt.log.ok(['Watching for changes']);
+    grunt.log.ok(['Use Ctrl + c to stop watching']);
+    grunt.task.run(['watch:seed']);
   });
 };

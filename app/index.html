@@ -23,7 +23,12 @@
         <script type="text/javascript" src="js/vendor/underscore-min.js"></script>
         <script type="text/javascript" src="js/build/build.js"></script>
         <script type="text/javascript">
-          React.render(React.createElement(Reactor.HelloMessage),document.getElementById('seed'));
+          React.render(React.createElement(Reactor.HelloMessage, {
+            message:'Hello World - React JS Seed',
+            paraCount:6
+          }), document.getElementById('seed'));
         </script>
+        <!-- Live reload script -->
+        <script src="//localhost:35729/livereload.js"></script>
     </body>
 </html>
