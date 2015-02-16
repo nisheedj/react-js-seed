@@ -90,7 +90,7 @@ module.exports = function(grunt) {
           spawn: false,
           livereload: true
         },
-        files: ['./app/js/src/**/*.js'],
+        files: ['./app/js/src/**/*.js','./app/index.html'],
         tasks: ['build']
       }
     }
