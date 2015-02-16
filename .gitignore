@@ -32,3 +32,9 @@ bower_components
 
 #jsx build
 app/js/build
+
+#css 
+app/css
+
+#vendor files
+app/js/vendor
