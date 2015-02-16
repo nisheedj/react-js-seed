@@ -1,0 +1,29 @@
+{
+  "name": "react-js-seed",
+  "version": "0.0.1",
+  "homepage": "https://github.com/nisheedj/react-js-seed",
+  "authors": [
+    "Nisheed Jagadish"
+  ],
+  "description": "A react js seed folder",
+  "keywords": [
+    "react",
+    "js",
+    "seed"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3",
+    "react": "~0.12.2",
+    "bootstrap": "~3.3.2",
+    "underscore": "~1.7.0"
+  }
+}

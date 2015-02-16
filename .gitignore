@@ -36,5 +36,8 @@ app/js/build
 #css 
 app/css
 
+#bootstrap less files
+app/less/bootstrap
+
 #vendor files
 app/js/vendor
